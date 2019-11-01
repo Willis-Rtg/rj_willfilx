@@ -1,6 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
-import { movieApi } from "../../api";
+import { moviesApi } from "../../api";
 
 export default class extends React.Component {
   state = {
@@ -15,19 +15,23 @@ export default class extends React.Component {
     try {
       const {
         data: { results: nowPlaying }
-      } = await movieApi.nowPlaying();
+      } = await moviesApi.nowPlaying();
+      console.log(
+        "TCL: extends -> componentDidMount -> nowPlaying",
+        nowPlaying
+      );
       const {
         data: { results: upcoming }
-      } = await movieApi.upcoming();
+      } = await moviesApi.upcoming();
       const {
         data: { results: popular }
-      } = await movieApi.popular();
+      } = await moviesApi.popular();
       this.setState({
         nowPlaying,
         upcoming,
         popular
       });
-    } catch (error) {
+    } catch {
       this.setState({
         error: "Can't get Moives information."
       });

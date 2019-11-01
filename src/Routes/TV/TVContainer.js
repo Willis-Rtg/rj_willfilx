@@ -13,12 +13,23 @@ export default class extends React.Component {
 
   async componentDidMount() {
     try {
-      const topRated = await TVApi.topRated();
-      const popular = await TVApi.popular();
-      const airingToday = await TVApi.airingToday();
+      const {
+        data: { results: topRated }
+      } = await TVApi.topRated();
+      const {
+        data: { results: popular }
+      } = await TVApi.popular();
+      const {
+        data: { results: airingToday }
+      } = await TVApi.airingToday();
+      console.log(
+        "TCL: extends -> componentDidMount -> airingToday",
+        airingToday
+      );
+      this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({
-        error: "Can't find movies Infomation."
+        error: "Can't find TV information."
       });
     } finally {
       this.setState({ loading: false });
