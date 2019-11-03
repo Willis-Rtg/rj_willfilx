@@ -28,14 +28,13 @@ export default class extends React.Component {
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) return push("/");
     let result = null;
-    const test = await moviesApi.movieDetail(parsedId);
+    // const test = await moviesApi.movieDetail(parsedId);
     try {
       if (isMovie) {
         ({ data: result } = await moviesApi.movieDetail(parsedId));
       } else {
         ({ data: result } = await TVApi.showDetail(parsedId));
       }
-      // console.log("TCL: extends -> componentDidMount -> result", result);
     } catch {
       this.setState({ error: "Can't find anything" });
     } finally {
@@ -45,6 +44,7 @@ export default class extends React.Component {
 
   render() {
     const { result, error, loading } = this.state;
-    return <DetailPresenter results={result} error={error} loading={loading} />;
+    console.log("TCL: extends -> render -> result", result);
+    return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }

@@ -22,10 +22,6 @@ export default class extends React.Component {
       const {
         data: { results: airingToday }
       } = await TVApi.airingToday();
-      console.log(
-        "TCL: extends -> componentDidMount -> airingToday",
-        airingToday
-      );
       this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({
@@ -38,6 +34,7 @@ export default class extends React.Component {
 
   render() {
     const { topRated, popular, airingToday, loading, error } = this.state;
+    // console.log("TCL: extends -> render -> this.state", this.state);
     return (
       <TVPresenter
         topRated={topRated}
