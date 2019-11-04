@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "0.18",
+    "browserslist": "^4.7.2",
     "dom-serializer": "^0.2.1",
+    "gh-pages": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -18,15 +20,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "https://rtgkorea.github.io/rj_willfilx",
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
+      "not io <= 11",
       "not op_mini all"
     ],
     "development": [
