@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/rj_willfilx/static/js/main.0bbe3984.chunk.js",
+    "main.js.map": "/rj_willfilx/static/js/main.0bbe3984.chunk.js.map",
+    "runtime~main.js": "/rj_willfilx/static/js/runtime~main.789791bd.js",
+    "runtime~main.js.map": "/rj_willfilx/static/js/runtime~main.789791bd.js.map",
+    "static/js/2.aa7adb0d.chunk.js": "/rj_willfilx/static/js/2.aa7adb0d.chunk.js",
+    "static/js/2.aa7adb0d.chunk.js.map": "/rj_willfilx/static/js/2.aa7adb0d.chunk.js.map",
+    "index.html": "/rj_willfilx/index.html",
+    "precache-manifest.e253a9db3124dcd17c072140d60abcb4.js": "/rj_willfilx/precache-manifest.e253a9db3124dcd17c072140d60abcb4.js",
+    "service-worker.js": "/rj_willfilx/service-worker.js",
+    "static/media/empty.png": "/rj_willfilx/static/media/empty.793cf611.png"
+  }
+}
