@@ -12,12 +12,12 @@ const Container = styled.div`
   padding-top: 20px;
 `;
 
-const HomePresenter = ({ nowPlaying, popular, upcoming, Loader, error }) => (
+const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => (
   <>
     <Helmet>
       <title> Movies | Willfilx </title>
     </Helmet>
-    {Loader ? (
+    {loading ? (
       <Loader />
     ) : (
       <Container>
