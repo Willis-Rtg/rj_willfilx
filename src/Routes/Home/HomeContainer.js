@@ -8,36 +8,36 @@ export default class extends React.Component {
     upcoming: null,
     popular: null,
     error: null,
-    loading: true
+    loading: true,
   };
 
   async componentDidMount() {
     try {
       const {
-        data: { results: nowPlaying }
+        data: { results: nowPlaying },
       } = await moviesApi.nowPlaying();
       console.log(
         "TCL: extends -> componentDidMount -> nowPlaying",
         nowPlaying
       );
       const {
-        data: { results: upcoming }
+        data: { results: upcoming },
       } = await moviesApi.upcoming();
       const {
-        data: { results: popular }
+        data: { results: popular },
       } = await moviesApi.popular();
       this.setState({
         nowPlaying,
         upcoming,
-        popular
+        popular,
       });
     } catch {
       this.setState({
-        error: "Can't get Moives information."
+        error: "Can't get Moives information.",
       });
     } finally {
       this.setState({
-        loading: false
+        loading: false,
       });
     }
   }

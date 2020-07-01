@@ -6,23 +6,23 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     const {
-      location: { pathname }
+      location: { pathname },
     } = props;
     this.state = {
       result: null,
       error: null,
       loading: true,
-      isMovie: pathname.includes("/movie/")
+      isMovie: pathname.includes("/movie/"),
     };
   }
 
   async componentDidMount() {
     const {
       match: {
-        params: { id }
+        params: { id },
       },
       history: { push },
-      location: { pathname }
+      location: { pathname },
     } = this.props;
     const { isMovie } = this.state;
     const parsedId = parseInt(id);
@@ -35,7 +35,7 @@ export default class extends React.Component {
       } else {
         ({ data: result } = await TVApi.showDetail(parsedId));
       }
-    } catch {
+    } catch (error) {
       this.setState({ error: "Can't find anything" });
     } finally {
       this.setState({ loading: false, result });
